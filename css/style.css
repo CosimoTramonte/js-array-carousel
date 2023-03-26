@@ -10,30 +10,46 @@
     height: 100vh;
     display: flex;   
     justify-content: center;
-    align-items: center;
+    padding-top: 100px;
 }
 
 .container{
-    background-color: coral;
     width: 70%;
     height: 62%;
     position: relative;
+    display: flex;
 }
 
 .carosello{
-    width: 100%;
+    width: 80%;
     height: 100%;
 }
 
-img{
+.carosello img{
     object-fit: cover;
     width: 100%;
     height: 100%;
     border-radius: 10px;
 }
 
-.commands{
+.container .gallery{
+    width: 20%;
+    height: 100%;
+    margin-right: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.gallery img{
     width: 100%;
+    height: 19%;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.commands{
+    width: 20%;
     height: 100%;
     position: absolute;
     display: flex;
@@ -47,7 +63,7 @@ img{
 .commands #beforeArrow{
     padding: 8px 10px;
     border-radius: 50%;
-    background-color: rgba(255, 255, 255, 0.61);
+    background-color: rgba(255, 255, 255, 0.856);
     cursor: pointer;
 }
 
@@ -59,4 +75,8 @@ img{
 
 .carosello .item.hide{
     display: none;
+}
+
+.select.special{
+    border: 4px solid white;
 }

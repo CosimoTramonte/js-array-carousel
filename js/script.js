@@ -8,6 +8,7 @@ const images = [
 
 const carosello = document.querySelector(".carosello")
 const nextimg = document.getElementById("nextArrow")
+const gallery = document.querySelector(".gallery")
 const beforeimg = document.getElementById("beforeArrow")
 let counter = 0
 
@@ -18,15 +19,22 @@ for(let i = 0 ; i < images.length; i++){
     carosello.innerHTML += `
     <img src="${image}" class="item hide"> 
     `  
+    gallery.innerHTML += `
+    <img src="${image}" class="select"> 
+    ` 
 }
 
 const items = document.getElementsByClassName("item");
 items[counter].classList.remove("hide")
-console.log(items)
+const selected = document.getElementsByClassName("select");
+selected[counter].classList.add("special")
+
+
 
 nextimg.addEventListener("click", function(){
 
     items[counter].classList.add("hide")
+    selected[counter].classList.remove("special")
 
     counter++;
 
@@ -35,6 +43,7 @@ nextimg.addEventListener("click", function(){
     }
 
     items[counter].classList.remove("hide")
+    selected[counter].classList.add("special")
 
 })
 
@@ -42,6 +51,7 @@ nextimg.addEventListener("click", function(){
 beforeimg.addEventListener("click", function(){
 
     items[counter].classList.add("hide")
+    selected[counter].classList.remove("special")
 
     counter--;
 
@@ -50,4 +60,5 @@ beforeimg.addEventListener("click", function(){
     }
 
     items[counter].classList.remove("hide")
+    selected[counter].classList.add("special")
 })
